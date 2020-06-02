@@ -9,6 +9,9 @@ import { Postagem } from '../model/Postagem';
 })
 export class FeedComponent implements OnInit {
 
+  key = 'data'
+  reverse = true
+
       listaPostagens: Postagem []
       postagem: Postagem = new Postagem
   constructor(private postagemService: PostagemService) { }
@@ -26,7 +29,7 @@ export class FeedComponent implements OnInit {
     publicar(){
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
         this.postagem = resp 
-        location.assign('/fedd')
+        location.assign('/feed')
       })
     }
 }
